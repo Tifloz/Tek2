@@ -1,6 +1,0 @@
-il y a une seule boucle (dans Game)
-chaque partie du jeu (menu/options/partie) est un Tab
-dans Game, _activTab correspond au Tab affiché actuellement, les Tab peuvent le changer (lancement partie, fin partie ...)
-au changement, le nouveau Tab est initialisé en créant ses
-
-// Ce fichier est une très bonidé
