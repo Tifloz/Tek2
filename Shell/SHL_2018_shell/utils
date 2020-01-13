@@ -1,0 +1,68 @@
+#!/bin/sh
+
+update_level() {
+    case $1 in
+        "{") BRACKET_LEVEL=$((BRACKET_LEVEL+1)) ;;
+        "}") BRACKET_LEVEL=$((BRACKET_LEVEL-1)) ;;
+        "[") SQUARE_BRACKET_LEVEL=$((SQUARE_BRACKET_LEVEL+1)) ;;
+        "]") SQUARE_BRACKET_LEVEL=$((SQUARE_BRACKET_LEVEL-1)) ;;
+    esac
+}
+
+table_describe() {
+ local TABLE="$1"
+
+cat "${DATABASE}" | grep "desc_${TABLE}"
+if [[ $? = 0 ]]; then
+return 1
+fi
+
+  for (( i=0; i<${#CONTENT}; i++ )); do
+      update_level "${CONTENT:$i:1}"
+
+      if [[ "${CONTENT:$i:1}" == "\"" ]] \
+            && [[ "{[," == *"${CONTENT:$i-1:1}"* ]] \
+            && [[ ${BRACKET_LEVEL} -eq 1 ]] && [[ ${SQUARE_BRACKET_LEVEL} -eq 0 ]]; then
+            CURRENT_TOKEN=$(echo "${CONTENT:$i}" | cut -d"\"" -f2)
+
+            if [[ ${TOKEN} == "desc_"* ]]; then
+                DESCRIBED_TABLE=$(echo TOKEN | cut -d"_" -f2)
+
+                if [[ ${DESCRIBED_TABLE} == ${TABLE} ]]; then
+                    echo "${CONTENT:$i}" | \
+                    cut -d"[" -f2 | cut -d"]" -f1 | \
+                    tr -d "\"" | tr , "\n"
+                fi
+            fi
+      fi
+  done
+}
+
+add_desc() {
+  IFS=',' read -r -a array <<< "$@"
+    for i in "${array[@]}"
+    do
+        echo -n "\"$i\""
+        if [[ "$i" != "${array[${#array[@]}-1]}" ]]; then
+            echo -n ","
+        fi
+    done
+}
+
+get_db_content() {
+  CONTENT=$(tr -d "\n\r\t" < ${DATABASE})
+    declare -i STATE=0
+
+    for (( i=0; i<${#CONTENT}; i++ )); do
+        if [[ "${CONTENT:$i:1}" == "\"" ]] && [[ $STATE -eq 0 ]]; then
+            STATE=1
+        elif [[ "${CONTENT:$i:1}" == "\"" ]] && [[ $STATE -eq 1 ]]; then
+            STATE=0
+        fi
+
+        if [[ "${CONTENT:$i:1}" == " " ]] && [[ $STATE -eq 0 ]]; then
+            CONTENT="${CONTENT:0:$i}${CONTENT:$i+1}"
+            i=$((i-1))
+        fi
+    done
+}

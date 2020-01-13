@@ -1,0 +1,20 @@
+Commands de déplacement :
+
+Forward : avance de 1
+Left : tourner à gauche (mais pas avancer)
+Right : tourner à  droite (mais pas avancer)
+
+
+Look : quand besoin de food ou rien à faire pour trouver pierre
+
+Inventory : tout les x temps pour verifier stock et food
+
+Connect_nbr pour fork (à faire en dernier)
+
+Eject : ? Pour incanter si trop de gens sur la tile
+
+take object quand object sur ma case (après look)
+
+Set object avant d'incanter pour réuniser élement donc après inventory ok pour incanter
+
+Incantation : après inventory et tous les sets

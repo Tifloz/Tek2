@@ -1,0 +1,158 @@
+#!/bin/sh
+
+OPTION="false"
+DATABASE=""
+CONTENT=""
+ACTION="none"
+KEY="NULL"
+VALUE="NULL"
+TMP="NULL"
+BRACKET_LEVEL=0
+SQUARE_BRACKET_LEVEL=0
+
+
+source ./error
+source ./db_calls
+source ./print
+source ./init
+source ./utils
+source ./insert
+source ./select
+
+init_db(){
+if [[ -z DATABASE ]]; then
+        DATABASE=${BDSH_File}
+    fi
+
+    if [[ -z ${DATABASE} ]]; then
+        DATABASE=${_DATABASE}
+    fi
+
+    if [[ -z ${DATABASE} ]]; then
+        error "Error: No filename specified"
+        exit 1
+    fi
+}
+
+get_arguments(){
+    while [[ $# -gt 0 ]]; do
+        local ARGUMENT="$1"
+
+        case "$ARGUMENT" in
+            -f|--file)
+                DATABASE=$2
+                shift
+                shift
+            ;;
+            -h|--help)
+                print_help
+                exit 0
+            ;;
+            -j|--json)
+                JSON_SELECT=1
+                shift
+            ;;
+            describe|insert|create|select)
+                ACTION="$ARGUMENT"
+                shift
+            ;;
+            *)
+                if [[ ${ARGUMENT} == "order" ]] && [[ ${ACTION} == "select" ]]; then
+                    ORDER_SELECT=1
+                else
+                    ARGUMENTS="$ARGUMENTS $ARGUMENT"
+                fi
+                shift
+            ;;
+        esac
+    done
+}
+
+findValue() {
+	echo "$KEY" | grep -q -e"^$.*"
+	if [[ $? = 0 ]]; then
+		KEY=$( echo "$KEY" | cut -d"$" -f2- )
+		grep -q -e"^$KEY=.*" "$DATABASE"
+		if [[ $? = 0 ]]; then
+			KEY=$( grep	-e"^$KEY=" "$DATABASE" | cut -d'=' -f2- )
+		else
+			echo "No such key : $KEY"
+			exit 1
+		fi
+	fi
+
+	echo "$VALUE" | grep -q -e"^$.*"
+	if [[ $? = 0 ]]; then
+		VALUE=$( echo "$VALUE" | cut -d"$" -f2- )
+		grep -q -e"^$VALUE=.*" "$DATABASE"
+		if [[ $? = 0 ]]; then
+			VALUE=$( grep -e"^$VALUE=" "$DATABASE" | cut -d'=' -f2- )
+		else
+			echo "No such key : $VALUE"
+			exit 1
+		fi
+	fi
+}
+
+valueCheck() {
+	if [[ "$ACTION" = "none" ]]; then
+		echo "Syntax error : No action selected" >&2
+		exit 1
+	elif [[ "$ACTION" != "insert" ]] && [[ ! -e "$DATABASE" ]]; then
+		echo "No database found : file $DATABASE" >&2
+		exit 1
+	elif [[ "$ACTION" = "insert" ]]; then
+		if [[ "$KEY" = "NULL" ]] || [[ "$VALUE" = "NULL" ]]; then
+			echo "Syntax error : Usage - insert (<key> | $<key>) (<value> | $<key>)" >&2
+			exit 1
+		fi
+	elif [[ "$ACTION" = "remove" ]]; then
+		if [[ "$KEY" = "NULL" ]]; then
+			echo "Syntax error : Usage - remove (<key> | $<key>) [<value> | $<key>] | select [<expr> | $<key>]" >&2
+			exit 1
+		fi
+	fi
+}
+
+flush() {
+	echo -n "" > "$DATABASE"
+}
+
+actionLoop() {
+	 case ${ACTION} in
+        "describe")
+            describe ${ARGUMENTS}
+        ;;
+        "insert")
+            insert ${ARGUMENTS}
+        ;;
+        "create")
+            create ${ARGUMENTS}
+        ;;
+        "select")
+            select_table ${ARGUMENTS}
+        ;;
+        "")
+            print_help
+            exit 1
+        ;;
+        *)
+            error "Error: Unknow action \"$ACTION\""
+            exit 1
+        ;;
+    esac
+}
+
+mainLoop(){
+get_arguments $@
+init_db
+db_is_valid
+get_db_content
+actionLoop
+
+write
+echo -e ${CONTENT} > ${DATABASE}
+sed -i -r '/^\s*$/d' ${DATABASE}
+}
+
+mainLoop $@

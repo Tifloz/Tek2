@@ -1,0 +1,7 @@
+/home/tiflo/Projets/Tek2/Indie/CMakeFiles/install/strip.dir
+/home/tiflo/Projets/Tek2/Indie/CMakeFiles/edit_cache.dir
+/home/tiflo/Projets/Tek2/Indie/CMakeFiles/Indie_Studio.dir
+/home/tiflo/Projets/Tek2/Indie/CMakeFiles/rebuild_cache.dir
+/home/tiflo/Projets/Tek2/Indie/CMakeFiles/list_install_components.dir
+/home/tiflo/Projets/Tek2/Indie/CMakeFiles/install/local.dir
+/home/tiflo/Projets/Tek2/Indie/CMakeFiles/install.dir

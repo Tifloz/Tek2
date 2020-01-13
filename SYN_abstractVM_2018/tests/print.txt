@@ -1,0 +1,5 @@
+push int8(120)
+print
+push int8(110)
+print
+exit

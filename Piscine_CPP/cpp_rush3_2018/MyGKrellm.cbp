@@ -1,0 +1,424 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="MyGKrellm"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;CMake Files\..\;CMake Files\..\..\;CMake Files\..\..\..\;CMake Files\..\..\..\..\;CMake Files\..\..\..\..\..\;CMake Files\..\..\..\..\..\usr\;CMake Files\..\..\..\..\..\usr\lib64\;CMake Files\..\..\..\..\..\usr\lib64\cmake\;CMake Files\..\..\..\..\..\usr\lib64\cmake\Qt5Core\;CMake Files\..\..\..\..\..\usr\lib64\cmake\Qt5Widgets\;CMake Files\..\..\..\..\..\usr\lib64\cmake\Qt5Gui\;CMake Files\..\..\..\..\..\usr\lib64\cmake\Qt5Charts\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/home/tiflo/Projets/Piscine_CPP/cpp_rush3_2018"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/tiflo/Projets/Piscine_CPP/cpp_rush3_2018/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/tiflo/Projets/Piscine_CPP/cpp_rush3_2018/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/tiflo/Projets/Piscine_CPP/cpp_rush3_2018/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/tiflo/Projets/Piscine_CPP/cpp_rush3_2018/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/home/tiflo/Projets/Piscine_CPP/cpp_rush3_2018"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/tiflo/Projets/Piscine_CPP/cpp_rush3_2018/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/tiflo/Projets/Piscine_CPP/cpp_rush3_2018/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/tiflo/Projets/Piscine_CPP/cpp_rush3_2018/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/tiflo/Projets/Piscine_CPP/cpp_rush3_2018/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="MyGKrellm">
+				<Option output="/home/tiflo/Projets/Piscine_CPP/cpp_rush3_2018/MyGKrellm" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/tiflo/Projets/Piscine_CPP/cpp_rush3_2018"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DQT_CORE_LIB"/>
+					<Add option="-DQT_WIDGETS_LIB"/>
+					<Add option="-DQT_GUI_LIB"/>
+					<Add option="-DQT_CHARTS_LIB"/>
+					<Add directory="/home/tiflo/Projets/Piscine_CPP/cpp_rush3_2018"/>
+					<Add directory="/home/tiflo/Projets/Piscine_CPP/cpp_rush3_2018/MyGKrellm_autogen/include"/>
+					<Add directory="/home/tiflo/Projets/Piscine_CPP/cpp_rush3_2018/Qt/include"/>
+					<Add directory="/home/tiflo/Projets/Piscine_CPP/cpp_rush3_2018/src/modules"/>
+					<Add directory="/usr/include/qt"/>
+					<Add directory="/usr/include/qt/QtCore"/>
+					<Add directory="/usr/lib/qt/mkspecs/linux-g++"/>
+					<Add directory="/usr/include/qt/QtWidgets"/>
+					<Add directory="/usr/include/qt/QtGui"/>
+					<Add directory="/usr/include/qt/QtCharts"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/8.2.1/../../../../include/c++/8.2.1"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/8.2.1/../../../../include/c++/8.2.1/x86_64-pc-linux-gnu"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/8.2.1/../../../../include/c++/8.2.1/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/8.2.1/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/8.2.1/include-fixed"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/tiflo/Projets/Piscine_CPP/cpp_rush3_2018/Makefile&quot;  VERBOSE=1 MyGKrellm"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/tiflo/Projets/Piscine_CPP/cpp_rush3_2018/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/tiflo/Projets/Piscine_CPP/cpp_rush3_2018/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/tiflo/Projets/Piscine_CPP/cpp_rush3_2018/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="MyGKrellm/fast">
+				<Option output="/home/tiflo/Projets/Piscine_CPP/cpp_rush3_2018/MyGKrellm" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/tiflo/Projets/Piscine_CPP/cpp_rush3_2018"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DQT_CORE_LIB"/>
+					<Add option="-DQT_WIDGETS_LIB"/>
+					<Add option="-DQT_GUI_LIB"/>
+					<Add option="-DQT_CHARTS_LIB"/>
+					<Add directory="/home/tiflo/Projets/Piscine_CPP/cpp_rush3_2018"/>
+					<Add directory="/home/tiflo/Projets/Piscine_CPP/cpp_rush3_2018/MyGKrellm_autogen/include"/>
+					<Add directory="/home/tiflo/Projets/Piscine_CPP/cpp_rush3_2018/Qt/include"/>
+					<Add directory="/home/tiflo/Projets/Piscine_CPP/cpp_rush3_2018/src/modules"/>
+					<Add directory="/usr/include/qt"/>
+					<Add directory="/usr/include/qt/QtCore"/>
+					<Add directory="/usr/lib/qt/mkspecs/linux-g++"/>
+					<Add directory="/usr/include/qt/QtWidgets"/>
+					<Add directory="/usr/include/qt/QtGui"/>
+					<Add directory="/usr/include/qt/QtCharts"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/8.2.1/../../../../include/c++/8.2.1"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/8.2.1/../../../../include/c++/8.2.1/x86_64-pc-linux-gnu"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/8.2.1/../../../../include/c++/8.2.1/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/8.2.1/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/8.2.1/include-fixed"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/tiflo/Projets/Piscine_CPP/cpp_rush3_2018/Makefile&quot;  VERBOSE=1 MyGKrellm/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/tiflo/Projets/Piscine_CPP/cpp_rush3_2018/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/tiflo/Projets/Piscine_CPP/cpp_rush3_2018/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/tiflo/Projets/Piscine_CPP/cpp_rush3_2018/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/home/tiflo/Projets/Piscine_CPP/cpp_rush3_2018"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/tiflo/Projets/Piscine_CPP/cpp_rush3_2018/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/tiflo/Projets/Piscine_CPP/cpp_rush3_2018/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/tiflo/Projets/Piscine_CPP/cpp_rush3_2018/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/tiflo/Projets/Piscine_CPP/cpp_rush3_2018/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="MyGKrellm_autogen">
+				<Option working_dir="/home/tiflo/Projets/Piscine_CPP/cpp_rush3_2018"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/tiflo/Projets/Piscine_CPP/cpp_rush3_2018/Makefile&quot;  VERBOSE=1 MyGKrellm_autogen"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/tiflo/Projets/Piscine_CPP/cpp_rush3_2018/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/tiflo/Projets/Piscine_CPP/cpp_rush3_2018/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/tiflo/Projets/Piscine_CPP/cpp_rush3_2018/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/home/tiflo/Projets/Piscine_CPP/cpp_rush3_2018/MyGKrellm_autogen/mocs_compilation.cpp">
+			<Option target="MyGKrellm"/>
+		</Unit>
+		<Unit filename="/home/tiflo/Projets/Piscine_CPP/cpp_rush3_2018/Qt/core/CPU.cpp">
+			<Option target="MyGKrellm"/>
+		</Unit>
+		<Unit filename="/home/tiflo/Projets/Piscine_CPP/cpp_rush3_2018/Qt/core/Chart.cpp">
+			<Option target="MyGKrellm"/>
+		</Unit>
+		<Unit filename="/home/tiflo/Projets/Piscine_CPP/cpp_rush3_2018/Qt/core/RAM.cpp">
+			<Option target="MyGKrellm"/>
+		</Unit>
+		<Unit filename="/home/tiflo/Projets/Piscine_CPP/cpp_rush3_2018/Qt/core/window.cpp">
+			<Option target="MyGKrellm"/>
+		</Unit>
+		<Unit filename="/home/tiflo/Projets/Piscine_CPP/cpp_rush3_2018/Qt/include/CPU.hpp">
+			<Option target="MyGKrellm"/>
+		</Unit>
+		<Unit filename="/home/tiflo/Projets/Piscine_CPP/cpp_rush3_2018/Qt/include/Chart.hpp">
+			<Option target="MyGKrellm"/>
+		</Unit>
+		<Unit filename="/home/tiflo/Projets/Piscine_CPP/cpp_rush3_2018/Qt/include/Network.hpp">
+			<Option target="MyGKrellm"/>
+		</Unit>
+		<Unit filename="/home/tiflo/Projets/Piscine_CPP/cpp_rush3_2018/Qt/include/RAM.hpp">
+			<Option target="MyGKrellm"/>
+		</Unit>
+		<Unit filename="/home/tiflo/Projets/Piscine_CPP/cpp_rush3_2018/Qt/include/gui_template.hpp">
+			<Option target="MyGKrellm"/>
+		</Unit>
+		<Unit filename="/home/tiflo/Projets/Piscine_CPP/cpp_rush3_2018/Qt/include/window.hpp">
+			<Option target="MyGKrellm"/>
+		</Unit>
+		<Unit filename="/home/tiflo/Projets/Piscine_CPP/cpp_rush3_2018/Qt/main.cpp">
+			<Option target="MyGKrellm"/>
+		</Unit>
+		<Unit filename="/home/tiflo/Projets/Piscine_CPP/cpp_rush3_2018/src/IMonitorDisplay.hpp">
+			<Option target="MyGKrellm"/>
+		</Unit>
+		<Unit filename="/home/tiflo/Projets/Piscine_CPP/cpp_rush3_2018/src/IMonitorModule.hpp">
+			<Option target="MyGKrellm"/>
+		</Unit>
+		<Unit filename="/home/tiflo/Projets/Piscine_CPP/cpp_rush3_2018/src/modules/baseModule.cpp">
+			<Option target="MyGKrellm"/>
+		</Unit>
+		<Unit filename="/home/tiflo/Projets/Piscine_CPP/cpp_rush3_2018/src/modules/baseModule.hpp">
+			<Option target="MyGKrellm"/>
+		</Unit>
+		<Unit filename="/home/tiflo/Projets/Piscine_CPP/cpp_rush3_2018/src/modules/cpuModule.cpp">
+			<Option target="MyGKrellm"/>
+		</Unit>
+		<Unit filename="/home/tiflo/Projets/Piscine_CPP/cpp_rush3_2018/src/modules/cpuModule.hpp">
+			<Option target="MyGKrellm"/>
+		</Unit>
+		<Unit filename="/home/tiflo/Projets/Piscine_CPP/cpp_rush3_2018/src/modules/dateModule.cpp">
+			<Option target="MyGKrellm"/>
+		</Unit>
+		<Unit filename="/home/tiflo/Projets/Piscine_CPP/cpp_rush3_2018/src/modules/dateModule.hpp">
+			<Option target="MyGKrellm"/>
+		</Unit>
+		<Unit filename="/home/tiflo/Projets/Piscine_CPP/cpp_rush3_2018/src/modules/ramModule.cpp">
+			<Option target="MyGKrellm"/>
+		</Unit>
+		<Unit filename="/home/tiflo/Projets/Piscine_CPP/cpp_rush3_2018/src/modules/ramModule.hpp">
+			<Option target="MyGKrellm"/>
+		</Unit>
+		<Unit filename="/home/tiflo/Projets/Piscine_CPP/cpp_rush3_2018/src/modules/systemModule.cpp">
+			<Option target="MyGKrellm"/>
+		</Unit>
+		<Unit filename="/home/tiflo/Projets/Piscine_CPP/cpp_rush3_2018/src/modules/systemModule.hpp">
+			<Option target="MyGKrellm"/>
+		</Unit>
+		<Unit filename="/home/tiflo/Projets/Piscine_CPP/cpp_rush3_2018/src/modules/userModule.cpp">
+			<Option target="MyGKrellm"/>
+		</Unit>
+		<Unit filename="/home/tiflo/Projets/Piscine_CPP/cpp_rush3_2018/src/modules/userModule.hpp">
+			<Option target="MyGKrellm"/>
+		</Unit>
+		<Unit filename="/home/tiflo/Projets/Piscine_CPP/cpp_rush3_2018/src/ncurses/Cpu.cpp">
+			<Option target="MyGKrellm"/>
+		</Unit>
+		<Unit filename="/home/tiflo/Projets/Piscine_CPP/cpp_rush3_2018/src/ncurses/Cpu.hpp">
+			<Option target="MyGKrellm"/>
+		</Unit>
+		<Unit filename="/home/tiflo/Projets/Piscine_CPP/cpp_rush3_2018/src/ncurses/Date.cpp">
+			<Option target="MyGKrellm"/>
+		</Unit>
+		<Unit filename="/home/tiflo/Projets/Piscine_CPP/cpp_rush3_2018/src/ncurses/Date.hpp">
+			<Option target="MyGKrellm"/>
+		</Unit>
+		<Unit filename="/home/tiflo/Projets/Piscine_CPP/cpp_rush3_2018/src/ncurses/Ram.cpp">
+			<Option target="MyGKrellm"/>
+		</Unit>
+		<Unit filename="/home/tiflo/Projets/Piscine_CPP/cpp_rush3_2018/src/ncurses/Ram.hpp">
+			<Option target="MyGKrellm"/>
+		</Unit>
+		<Unit filename="/home/tiflo/Projets/Piscine_CPP/cpp_rush3_2018/src/ncurses/System.cpp">
+			<Option target="MyGKrellm"/>
+		</Unit>
+		<Unit filename="/home/tiflo/Projets/Piscine_CPP/cpp_rush3_2018/src/ncurses/System.hpp">
+			<Option target="MyGKrellm"/>
+		</Unit>
+		<Unit filename="/home/tiflo/Projets/Piscine_CPP/cpp_rush3_2018/src/ncurses/SystemCore.cpp">
+			<Option target="MyGKrellm"/>
+		</Unit>
+		<Unit filename="/home/tiflo/Projets/Piscine_CPP/cpp_rush3_2018/src/ncurses/SystemCore.hpp">
+			<Option target="MyGKrellm"/>
+		</Unit>
+		<Unit filename="/home/tiflo/Projets/Piscine_CPP/cpp_rush3_2018/src/ncurses/User.cpp">
+			<Option target="MyGKrellm"/>
+		</Unit>
+		<Unit filename="/home/tiflo/Projets/Piscine_CPP/cpp_rush3_2018/src/ncurses/User.hpp">
+			<Option target="MyGKrellm"/>
+		</Unit>
+		<Unit filename="/home/tiflo/Projets/Piscine_CPP/cpp_rush3_2018/src/ncurses/startText.cpp">
+			<Option target="MyGKrellm"/>
+		</Unit>
+		<Unit filename="/home/tiflo/Projets/Piscine_CPP/cpp_rush3_2018/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+		<Unit filename="/home/tiflo/Projets/Piscine_CPP/cpp_rush3_2018/../../../../../usr/lib64/cmake/Qt5Core/Qt5CoreConfig.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\usr\lib64\cmake\Qt5Core\"/>
+		</Unit>
+		<Unit filename="/home/tiflo/Projets/Piscine_CPP/cpp_rush3_2018/../../../../../usr/lib64/cmake/Qt5Core/Qt5CoreConfigExtras.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\usr\lib64\cmake\Qt5Core\"/>
+		</Unit>
+		<Unit filename="/home/tiflo/Projets/Piscine_CPP/cpp_rush3_2018/../../../../../usr/lib64/cmake/Qt5Core/Qt5CoreConfigExtrasMkspecDir.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\usr\lib64\cmake\Qt5Core\"/>
+		</Unit>
+		<Unit filename="/home/tiflo/Projets/Piscine_CPP/cpp_rush3_2018/../../../../../usr/lib64/cmake/Qt5Core/Qt5CoreConfigVersion.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\usr\lib64\cmake\Qt5Core\"/>
+		</Unit>
+		<Unit filename="/home/tiflo/Projets/Piscine_CPP/cpp_rush3_2018/../../../../../usr/lib64/cmake/Qt5Core/Qt5CoreMacros.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\usr\lib64\cmake\Qt5Core\"/>
+		</Unit>
+		<Unit filename="/home/tiflo/Projets/Piscine_CPP/cpp_rush3_2018/../../../../../usr/lib64/cmake/Qt5Widgets/Qt5WidgetsConfig.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\usr\lib64\cmake\Qt5Widgets\"/>
+		</Unit>
+		<Unit filename="/home/tiflo/Projets/Piscine_CPP/cpp_rush3_2018/../../../../../usr/lib64/cmake/Qt5Widgets/Qt5WidgetsConfigExtras.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\usr\lib64\cmake\Qt5Widgets\"/>
+		</Unit>
+		<Unit filename="/home/tiflo/Projets/Piscine_CPP/cpp_rush3_2018/../../../../../usr/lib64/cmake/Qt5Widgets/Qt5WidgetsConfigVersion.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\usr\lib64\cmake\Qt5Widgets\"/>
+		</Unit>
+		<Unit filename="/home/tiflo/Projets/Piscine_CPP/cpp_rush3_2018/../../../../../usr/lib64/cmake/Qt5Widgets/Qt5WidgetsMacros.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\usr\lib64\cmake\Qt5Widgets\"/>
+		</Unit>
+		<Unit filename="/home/tiflo/Projets/Piscine_CPP/cpp_rush3_2018/../../../../../usr/lib64/cmake/Qt5Widgets/Qt5Widgets_QBB10StylePlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\usr\lib64\cmake\Qt5Widgets\"/>
+		</Unit>
+		<Unit filename="/home/tiflo/Projets/Piscine_CPP/cpp_rush3_2018/../../../../../usr/lib64/cmake/Qt5Widgets/Qt5Widgets_QCleanlooksStylePlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\usr\lib64\cmake\Qt5Widgets\"/>
+		</Unit>
+		<Unit filename="/home/tiflo/Projets/Piscine_CPP/cpp_rush3_2018/../../../../../usr/lib64/cmake/Qt5Widgets/Qt5Widgets_QGtk2StylePlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\usr\lib64\cmake\Qt5Widgets\"/>
+		</Unit>
+		<Unit filename="/home/tiflo/Projets/Piscine_CPP/cpp_rush3_2018/../../../../../usr/lib64/cmake/Qt5Widgets/Qt5Widgets_QMotifStylePlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\usr\lib64\cmake\Qt5Widgets\"/>
+		</Unit>
+		<Unit filename="/home/tiflo/Projets/Piscine_CPP/cpp_rush3_2018/../../../../../usr/lib64/cmake/Qt5Widgets/Qt5Widgets_QPlastiqueStylePlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\usr\lib64\cmake\Qt5Widgets\"/>
+		</Unit>
+		<Unit filename="/home/tiflo/Projets/Piscine_CPP/cpp_rush3_2018/../../../../../usr/lib64/cmake/Qt5Gui/Qt5GuiConfig.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\usr\lib64\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/tiflo/Projets/Piscine_CPP/cpp_rush3_2018/../../../../../usr/lib64/cmake/Qt5Gui/Qt5GuiConfigExtras.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\usr\lib64\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/tiflo/Projets/Piscine_CPP/cpp_rush3_2018/../../../../../usr/lib64/cmake/Qt5Gui/Qt5GuiConfigVersion.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\usr\lib64\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/tiflo/Projets/Piscine_CPP/cpp_rush3_2018/../../../../../usr/lib64/cmake/Qt5Gui/Qt5Gui_QComposePlatformInputContextPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\usr\lib64\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/tiflo/Projets/Piscine_CPP/cpp_rush3_2018/../../../../../usr/lib64/cmake/Qt5Gui/Qt5Gui_QEglFSEmulatorIntegrationPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\usr\lib64\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/tiflo/Projets/Piscine_CPP/cpp_rush3_2018/../../../../../usr/lib64/cmake/Qt5Gui/Qt5Gui_QEglFSIntegrationPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\usr\lib64\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/tiflo/Projets/Piscine_CPP/cpp_rush3_2018/../../../../../usr/lib64/cmake/Qt5Gui/Qt5Gui_QEglFSKmsEglDeviceIntegrationPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\usr\lib64\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/tiflo/Projets/Piscine_CPP/cpp_rush3_2018/../../../../../usr/lib64/cmake/Qt5Gui/Qt5Gui_QEglFSKmsGbmIntegrationPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\usr\lib64\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/tiflo/Projets/Piscine_CPP/cpp_rush3_2018/../../../../../usr/lib64/cmake/Qt5Gui/Qt5Gui_QEglFSX11IntegrationPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\usr\lib64\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/tiflo/Projets/Piscine_CPP/cpp_rush3_2018/../../../../../usr/lib64/cmake/Qt5Gui/Qt5Gui_QEvdevKeyboardPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\usr\lib64\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/tiflo/Projets/Piscine_CPP/cpp_rush3_2018/../../../../../usr/lib64/cmake/Qt5Gui/Qt5Gui_QEvdevMousePlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\usr\lib64\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/tiflo/Projets/Piscine_CPP/cpp_rush3_2018/../../../../../usr/lib64/cmake/Qt5Gui/Qt5Gui_QEvdevTabletPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\usr\lib64\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/tiflo/Projets/Piscine_CPP/cpp_rush3_2018/../../../../../usr/lib64/cmake/Qt5Gui/Qt5Gui_QEvdevTouchScreenPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\usr\lib64\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/tiflo/Projets/Piscine_CPP/cpp_rush3_2018/../../../../../usr/lib64/cmake/Qt5Gui/Qt5Gui_QGifPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\usr\lib64\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/tiflo/Projets/Piscine_CPP/cpp_rush3_2018/../../../../../usr/lib64/cmake/Qt5Gui/Qt5Gui_QGtk2ThemePlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\usr\lib64\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/tiflo/Projets/Piscine_CPP/cpp_rush3_2018/../../../../../usr/lib64/cmake/Qt5Gui/Qt5Gui_QGtk3ThemePlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\usr\lib64\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/tiflo/Projets/Piscine_CPP/cpp_rush3_2018/../../../../../usr/lib64/cmake/Qt5Gui/Qt5Gui_QICNSPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\usr\lib64\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/tiflo/Projets/Piscine_CPP/cpp_rush3_2018/../../../../../usr/lib64/cmake/Qt5Gui/Qt5Gui_QICOPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\usr\lib64\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/tiflo/Projets/Piscine_CPP/cpp_rush3_2018/../../../../../usr/lib64/cmake/Qt5Gui/Qt5Gui_QIbusPlatformInputContextPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\usr\lib64\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/tiflo/Projets/Piscine_CPP/cpp_rush3_2018/../../../../../usr/lib64/cmake/Qt5Gui/Qt5Gui_QJp2Plugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\usr\lib64\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/tiflo/Projets/Piscine_CPP/cpp_rush3_2018/../../../../../usr/lib64/cmake/Qt5Gui/Qt5Gui_QJpegPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\usr\lib64\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/tiflo/Projets/Piscine_CPP/cpp_rush3_2018/../../../../../usr/lib64/cmake/Qt5Gui/Qt5Gui_QLibInputPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\usr\lib64\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/tiflo/Projets/Piscine_CPP/cpp_rush3_2018/../../../../../usr/lib64/cmake/Qt5Gui/Qt5Gui_QLinuxFbIntegrationPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\usr\lib64\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/tiflo/Projets/Piscine_CPP/cpp_rush3_2018/../../../../../usr/lib64/cmake/Qt5Gui/Qt5Gui_QMinimalEglIntegrationPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\usr\lib64\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/tiflo/Projets/Piscine_CPP/cpp_rush3_2018/../../../../../usr/lib64/cmake/Qt5Gui/Qt5Gui_QMinimalIntegrationPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\usr\lib64\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/tiflo/Projets/Piscine_CPP/cpp_rush3_2018/../../../../../usr/lib64/cmake/Qt5Gui/Qt5Gui_QMngPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\usr\lib64\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/tiflo/Projets/Piscine_CPP/cpp_rush3_2018/../../../../../usr/lib64/cmake/Qt5Gui/Qt5Gui_QOffscreenIntegrationPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\usr\lib64\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/tiflo/Projets/Piscine_CPP/cpp_rush3_2018/../../../../../usr/lib64/cmake/Qt5Gui/Qt5Gui_QTgaPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\usr\lib64\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/tiflo/Projets/Piscine_CPP/cpp_rush3_2018/../../../../../usr/lib64/cmake/Qt5Gui/Qt5Gui_QTiffPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\usr\lib64\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/tiflo/Projets/Piscine_CPP/cpp_rush3_2018/../../../../../usr/lib64/cmake/Qt5Gui/Qt5Gui_QTsLibPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\usr\lib64\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/tiflo/Projets/Piscine_CPP/cpp_rush3_2018/../../../../../usr/lib64/cmake/Qt5Gui/Qt5Gui_QTuioTouchPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\usr\lib64\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/tiflo/Projets/Piscine_CPP/cpp_rush3_2018/../../../../../usr/lib64/cmake/Qt5Gui/Qt5Gui_QVirtualKeyboardPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\usr\lib64\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/tiflo/Projets/Piscine_CPP/cpp_rush3_2018/../../../../../usr/lib64/cmake/Qt5Gui/Qt5Gui_QVncIntegrationPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\usr\lib64\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/tiflo/Projets/Piscine_CPP/cpp_rush3_2018/../../../../../usr/lib64/cmake/Qt5Gui/Qt5Gui_QWaylandEglPlatformIntegrationPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\usr\lib64\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/tiflo/Projets/Piscine_CPP/cpp_rush3_2018/../../../../../usr/lib64/cmake/Qt5Gui/Qt5Gui_QWaylandIntegrationPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\usr\lib64\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/tiflo/Projets/Piscine_CPP/cpp_rush3_2018/../../../../../usr/lib64/cmake/Qt5Gui/Qt5Gui_QWaylandXCompositeEglPlatformIntegrationPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\usr\lib64\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/tiflo/Projets/Piscine_CPP/cpp_rush3_2018/../../../../../usr/lib64/cmake/Qt5Gui/Qt5Gui_QWaylandXCompositeGlxPlatformIntegrationPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\usr\lib64\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/tiflo/Projets/Piscine_CPP/cpp_rush3_2018/../../../../../usr/lib64/cmake/Qt5Gui/Qt5Gui_QWbmpPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\usr\lib64\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/tiflo/Projets/Piscine_CPP/cpp_rush3_2018/../../../../../usr/lib64/cmake/Qt5Gui/Qt5Gui_QWebGLIntegrationPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\usr\lib64\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/tiflo/Projets/Piscine_CPP/cpp_rush3_2018/../../../../../usr/lib64/cmake/Qt5Gui/Qt5Gui_QWebpPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\usr\lib64\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/tiflo/Projets/Piscine_CPP/cpp_rush3_2018/../../../../../usr/lib64/cmake/Qt5Gui/Qt5Gui_QXcbEglIntegrationPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\usr\lib64\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/tiflo/Projets/Piscine_CPP/cpp_rush3_2018/../../../../../usr/lib64/cmake/Qt5Gui/Qt5Gui_QXcbGlxIntegrationPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\usr\lib64\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/tiflo/Projets/Piscine_CPP/cpp_rush3_2018/../../../../../usr/lib64/cmake/Qt5Gui/Qt5Gui_QXcbIntegrationPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\usr\lib64\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/tiflo/Projets/Piscine_CPP/cpp_rush3_2018/../../../../../usr/lib64/cmake/Qt5Gui/Qt5Gui_QXdgDesktopPortalThemePlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\usr\lib64\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/tiflo/Projets/Piscine_CPP/cpp_rush3_2018/../../../../../usr/lib64/cmake/Qt5Charts/Qt5ChartsConfig.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\usr\lib64\cmake\Qt5Charts\"/>
+		</Unit>
+		<Unit filename="/home/tiflo/Projets/Piscine_CPP/cpp_rush3_2018/../../../../../usr/lib64/cmake/Qt5Charts/Qt5ChartsConfigVersion.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\usr\lib64\cmake\Qt5Charts\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

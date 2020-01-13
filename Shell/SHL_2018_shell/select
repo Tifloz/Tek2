@@ -1,0 +1,175 @@
+#!/bin/sh
+write_select_json() {
+    OUTPUT="{}"
+    for (( j=0; j<${#SELECT_DATA[@]}; j++ )); do
+        BRACKET_LEVEL=0
+        SQUARE_BRACKET_LEVEL=0
+        for (( i=0; i<${#OUTPUT}; i++ )); do
+            update_level "${OUTPUT:$i:1}"
+            if [[ ${BRACKET_LEVEL} -eq 1 ]] && [[ ${SQUARE_BRACKET_LEVEL} -eq 0 ]]; then
+                if [[ ${OUTPUT} == "{}" ]]; then
+                    COMMAT=""
+                else
+                    COMMAT=","
+                fi
+                OUTPUT="${OUTPUT:0:$i+1}\"${FIELDS[$j]}\":[$(write_json "${SELECT_DATA[$j]}")]$COMMAT${OUTPUT:$i+1}"
+                break
+            fi
+        done
+    done
+    write_format_json "$OUTPUT"
+}
+
+
+write_select() {
+    for (( i=0; i<${#NA_SELECT_DATA[@]}; i++ )); do
+        declare -a SUB_ARRAY=(${NA_SELECT_DATA[$i]})
+        FIELD=1
+        
+        for (( j=0; j<${#SUB_ARRAY[@]}; j++ )); do
+            ELEMENT="${SUB_ARRAY[$j]}"
+            ELEMENT="${ELEMENT//_/ }"
+
+            declare -i PADDING=$((${LENGTHS[$j]}+2))
+            if [[ ${FIELD} -lt ${#FIELDS[@]} ]]; then
+                if [[ $j -ne 0 ]]; then
+                    echo -n " "
+                fi
+                if [[ "${SUB_ARRAY[$j]}" != "null" ]]; then
+                    printf "%-*s" ${PADDING} "$ELEMENT"
+                else
+                    printf "%-*s" ${PADDING} ""
+                fi
+                echo -n "|"
+            else
+                if [[ "${SUB_ARRAY[$j]}" != "null" ]]; then
+                    if [[ $j -ne 0 ]]; then
+                        echo -n " "
+                    fi
+                    echo -n "$ELEMENT"
+                fi
+            fi
+            ((FIELD++))
+        done
+        echo
+    done
+}
+
+
+select_is_valid() {
+    local TABLE=$1
+    shift
+    IFS=" " read -r -a ARGS <<< $@
+    DESCRIBED_TABLE=($(table_describe ${TABLE}))
+
+    if [[ -z "${DESCRIBED_TABLE[@]}" ]]; then
+        error "Error: Unknown table \"$TABLE\""
+        exit 1
+    fi
+
+    for ((i=0; i<${#ARGS[@]}; i++)); do
+        KEY=$(echo ${ARGS[$i]})
+        declare -i TMP=0
+        for ((j=0; j<${#DESCRIBED_TABLE[@]}; j++)); do
+            if [[ ${KEY} == ${DESCRIBED_TABLE[$j]} ]]; then
+                TMP=1
+            fi
+        done
+
+        if [[ ${TMP} -eq 0 ]]; then
+            error "Error: No field \"$KEY\" exist in table \"$TABLE\""
+            exit 1
+        fi
+    done
+}
+
+
+select_table() {
+    local TABLE_NAME="$1"
+    shift
+    IFS="," read -r -a FIELDS <<< $@
+    declare -A SELECT_DATA=()
+    declare -a NA_SELECT_DATA=()
+
+    select_is_valid "$TABLE_NAME" "${FIELDS[@]}"
+
+    for (( i=0; i<${#CONTENT}; i++ )); do
+        update_level "${CONTENT:$i:1}"
+
+        if [[ "${CONTENT:$i}" == "data_$TABLE_NAME"* ]]; then
+            local RAW=$(echo ${CONTENT:$i} | cut -d"[" -f2 | cut -d"]" -f1)
+
+            RAW=${RAW//\},\{/|}
+            RAW=$(echo ${RAW} | cut -d"{" -f2 | cut -d"}" -f1)
+
+            IFS="|" read -r -a DATAS <<< "$RAW"
+
+            for (( j=0; j<${#DATAS[@]}; j++ )); do
+                IFS="," read -r -a DATA <<< ${DATAS[$j]}
+
+                for (( FIELD_INDEX=0; FIELD_INDEX<${#FIELDS[@]}; FIELD_INDEX++ )); do
+                    for (( k=0; k<${#DATA[@]}; k++ )); do
+                        local KEY=$(echo ${DATA[$k]} | cut -d":" -f1 | tr -d "\"")
+                        if [[ $KEY != ${FIELDS[$FIELD_INDEX]} ]]; then
+                            continue
+                        fi
+                        local VALUE=$(echo ${DATA[$k]} | cut -d":" -f2 | tr -d "\"")
+                        VALUE=${VALUE// /_}
+                        if [[ -z ${VALUE} ]]; then
+                            VALUE="null"
+                        fi
+                        SELECT_DATA[$FIELD_INDEX]+=" $VALUE"
+                        NA_SELECT_DATA[$j]+=" $VALUE"
+                    done
+                done
+            done
+            break
+        fi
+    done
+
+    if [[ ${JSON_SELECT} != 1 ]]; then
+
+        declare -i FIELD=1
+        for i in "${!SELECT_DATA[@]}"; do
+            declare -a LENGTHS
+            declare -a SUB_ARRAY=(${SELECT_DATA[$i]})
+            declare -i MAX_LENGTH=0
+
+            for j in "${SUB_ARRAY[@]}"; do
+                if [[ ${#j} -gt ${MAX_LENGTH} ]] && [[ ${j} != "null" ]]; then
+                    MAX_LENGTH=${#j}
+                fi
+            done
+
+            LENGTHS+=("$MAX_LENGTH")
+            if [[ ${FIELD} -lt ${#FIELDS[@]} ]]; then
+                printf "%-*s" "$((MAX_LENGTH+2))" "${FIELDS[$i]}"
+                echo -n "| "
+            else
+                echo -n "${FIELDS[$i]}"
+            fi
+
+            ((FIELD++))
+        done
+        echo
+        declare -i SEPARATOR_LENGTH=0
+
+        for i in ${LENGTHS[@]}; do
+            ((SEPARATOR_LENGTH+=$i+2))
+        done
+        ((SEPARATOR_LENGTH+=${#LENGTHS[@]}*2-2))
+
+        SEPARATOR=$(printf "%-*s" ${SEPARATOR_LENGTH} "-")
+        SEPARATOR=${SEPARATOR// /-}
+
+        echo ${SEPARATOR}
+    fi
+
+    if [[ ${ORDER_SELECT} == 1 ]]; then
+        write_select | sort
+    elif [[ $JSON_SELECT == 1 ]]; then
+        write_select_json
+    else
+        write_select
+    fi
+}

@@ -1,0 +1,1 @@
+/usr/bin/c++  -std=c++11 -Wall -Wextra -I. -pthread -lGL -Lirrlicht -lIrrlich   CMakeFiles/Indie_Studio.dir/src/main.cpp.o  -o Indie_Studio  -L/home/tiflo/Projets/Tek2/Indie/platforms/linux -Wl,-rpath,:::::::::::::: 

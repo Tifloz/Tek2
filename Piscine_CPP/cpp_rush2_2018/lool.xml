@@ -1,0 +1,8 @@
+<?xml version='1.0' encoding='us-ascii'?>
+<Main>
+	<Gift>
+		<Info data="ClassName">Toy</Info>
+		<Info data="Is taken">false</Info>
+		<Info data="Is wrapped">false</Info>
+	</Gift>
+</Main>

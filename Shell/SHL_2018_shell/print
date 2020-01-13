@@ -1,0 +1,118 @@
+#!/bin/sh
+
+HELP=".bdsh.help"
+
+write_entry() {
+    IFS=',' read -r -a array <<< "$@"
+    for i in "${array[@]}"
+    do
+        key=$(echo ${i} | cut -d"=" -f1)
+        value=$(echo ${i} | cut -d"=" -f2)
+
+        echo -n "\"$key\":\"$value\""
+
+        if [[ "$i" != "${array[${#array[@]}-1]}" ]]; then
+            echo -n ","
+        fi
+    done
+}
+
+print_help(){
+    cat ${HELP}
+}
+
+format_indent(){
+    declare -i nb=$1
+
+    for (( i=0; i<$nb; i++ )); do
+        echo -n '\t'
+    done
+}
+
+write_json() {
+  IFS=' ' read -r -a array <<< "$@"
+    for ((i=0; i<${#array[@]}; i++)); do
+
+        ELEMENT=${array[$i]}
+        ELEMENT=${ELEMENT//_/ }
+
+        if [[ ${ELEMENT} == "null" ]]; then
+            echo -n "\"\""
+        else
+            echo -n "\"$ELEMENT\""
+        fi
+
+        if [[ "$i" < $((${#array[@]}-1)) ]]; then
+            echo -n ","
+        fi
+    done
+
+}
+
+write_format_json() {
+    OUTPUT="$@"
+    declare -i INDENT=0
+    declare -i POS=0
+    SPACES=""
+
+    for (( i=0; i<${#OUTPUT}; i++ )); do
+
+        if [[ "]}" == *"${OUTPUT:$POS:1}"* ]]; then
+            if [[ ${POS} -eq ${#OUTPUT} ]]; then
+                break
+            fi
+
+            INDENT=$((INDENT-1))
+            SPACES=$(display_indent ${INDENT})
+            OUTPUT="${OUTPUT:0:$POS}\n$SPACES${OUTPUT:$POS}"
+            POS=$((POS+2+($INDENT*2)))
+        elif [[ "{[" == *"${OUTPUT:$POS:1}"* ]]; then
+            INDENT=$((INDENT+1))
+            SPACES=$(display_indent ${INDENT})
+            OUTPUT="${OUTPUT:0:$POS+1}\n$SPACES${OUTPUT:$POS+1}"
+            POS=$((POS+2+($INDENT*2)))
+        elif [[ "," == *"${OUTPUT:$POS:1}"* ]]; then
+            OUTPUT="${OUTPUT:0:$POS+1}\n$SPACES${OUTPUT:$POS+1}"
+            POS=$((POS+2+($INDENT*2)))
+        elif [[ ":" == "${OUTPUT:$POS:1}" ]]; then
+            OUTPUT="${OUTPUT:0:$POS+1} ${OUTPUT:$POS+1}"
+            POS=$((POS+1))
+        fi
+        POS=$((POS+1))
+    done
+
+    echo -e ${OUTPUT}
+}
+
+
+write(){
+    declare -i INDENT=0
+    declare -i POS=0
+    SPACES=""
+
+    for (( i=0; i<${#CONTENT}; i++ )); do
+
+        if [[ "]}" == *"${CONTENT:$POS:1}"* ]]; then
+            if [[ ${POS} -eq ${#CONTENT}+1 ]]; then
+                return
+            fi
+
+            INDENT=$((INDENT-1))
+            SPACES=$(format_indent ${INDENT})
+            CONTENT="${CONTENT:0:$POS}\n$SPACES${CONTENT:$POS}"
+            POS=$((POS+2+($INDENT*2)))
+        elif [[ "{[" == *"${CONTENT:$POS:1}"* ]]; then
+            INDENT=$((INDENT+1))
+            SPACES=$(format_indent ${INDENT})
+            CONTENT="${CONTENT:0:$POS+1}\n$SPACES${CONTENT:$POS+1}"
+            POS=$((POS+2+($INDENT*2)))
+        elif [[ "," == *"${CONTENT:$POS:1}"* ]]; then
+            CONTENT="${CONTENT:0:$POS+1}\n$SPACES${CONTENT:$POS+1}"
+            POS=$((POS+2+($INDENT*2)))
+        elif [[ ":" == "${CONTENT:$POS:1}" ]]; then
+            CONTENT="${CONTENT:0:$POS+1} ${CONTENT:$POS+1}"
+            POS=$((POS+1))
+        fi
+        POS=$((POS+1))
+    done
+}

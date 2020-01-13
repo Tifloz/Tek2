@@ -1,0 +1,64 @@
+# Created by .ignore support plugin (hsz.mobi)
+### C++ template
+# Prerequisites
+*.d
+
+# Compiled Object files
+*.slo
+*.lo
+*.o
+*.obj
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Compiled Dynamic libraries
+*.so
+*.dylib
+*.dll
+
+# Fortran module files
+*.mod
+*.smod
+
+# Compiled Static libraries
+*.lai
+*.la
+*.a
+*.lib
+
+# Executables
+*.exe
+*.out
+*.app
+
+.idea/
+/cmake-build-debug/
+/cmake-build-release/
+/CMakeFiles/
+/Qt/.qmake.stash
+/cmake_install.cmake
+/CMakeCache.txt
+/MyGKrellm
+/MyGKrellm_autogen/
+
+src/ncurses/Makefile
+
+src/ncurses/main\.cpp
+CMakeCache.txt
+CMakeFiles/3.10.2/CMakeCCompiler.cmake
+CMakeFiles/3.10.2/CMakeCXXCompiler.cmake
+CMakeFiles/3.10.2/CMakeDetermineCompilerABI_C.bin
+CMakeFiles/3.10.2/CMakeDetermineCompilerABI_CXX.bin
+CMakeFiles/3.10.2/CMakeSystem.cmake
+CMakeFiles/3.10.2/CompilerIdC/CMakeCCompilerId.c
+CMakeFiles/3.10.2/CompilerIdC/tmp/
+CMakeFiles/3.10.2/CompilerIdCXX/CMakeCXXCompilerId.cpp
+CMakeFiles/3.10.2/CompilerIdCXX/tmp/
+CMakeFiles/CMakeOutput.log
+CMakeFiles/CMakeTmp/
+CMakeFiles/cmake.check_cache
+CMakeFiles/feature_tests.bin
+CMakeFiles/feature_tests.c
+CMakeFiles/feature_tests.cxx

@@ -1,0 +1,31 @@
+commit b4cf391f1cbd3bcf0b21ddd359da4d4d74efb3b5
+Author: Florian Louvet <florian.louvet@epitech.eu>
+Date:   Sun Mar 3 23:41:57 2019 +0100
+
+    [~] Fixed binary name
+
+commit 7a67f51f6c0f597e0a37e86156ccf71c04b45968
+Author: Florian Louvet <florian.louvet@epitech.eu>
+Date:   Sun Mar 3 23:39:23 2019 +0100
+
+    [+] Added a parser and flags handler modules
+    [+] Added the main functions and a Utils module to useful functions
+
+commit 5ed86f9302c0f559c35d1c7361cb204075a6922b
+Author: Florian Louvet <florian.louvet@epitech.eu>
+Date:   Sun Mar 3 23:38:52 2019 +0100
+
+    [~] Fixed a missing char in the main function
+
+commit 04b7e8a13662c78b068b8903f3e65b926d55a532
+Author: Florian Louvet <florian.louvet@epitech.eu>
+Date:   Sun Mar 3 23:27:02 2019 +0100
+
+    [+] Added a main to my project witch will call and import needed modules
+    [~] Fixed modules names in Makefile
+
+commit 0981515633ff8dfa120abb35235c4284d2c80bb0
+Author: Florian Louvet <florian.louvet@epitech.eu>
+Date:   Sun Mar 3 23:19:40 2019 +0100
+
+    Initialized repo

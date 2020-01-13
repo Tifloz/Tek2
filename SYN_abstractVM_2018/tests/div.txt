@@ -1,0 +1,5 @@
+push int8(25)
+push int8(4)
+mod
+dump
+exit

@@ -1,0 +1,43 @@
+#!/bin/sh
+
+create(){
+  local TMP="$1"
+   shift
+   if [[ ${TMP} == "database" ]]; then
+        CONTENT="{}"
+        return
+            elif [[ ${TMP} == "table" ]]; then
+        local TABLE_NAME="$1"
+        shift
+        local ARGUMENTS="$@"
+
+        if [[ ! -z $(table_describe ${TABLE_NAME}) ]]; then
+            error "Error: Table \"$TABLE_NAME\" already exist"
+            exit 1
+        fi
+
+        for (( i=0; i<${#CONTENT}; i++ )); do
+            update_level "${CONTENT:$i:1}"
+            if [[ ${BRACKET_LEVEL} -eq 1 ]] && [[ ${SQUARE_BRACKET_LEVEL} -eq 0 ]]; then
+                if [[ ${CONTENT} == "{}" ]]; then
+                    COMMAT=""
+                else
+                    COMMAT=","
+                fi
+                CONTENT="${CONTENT:0:$i+1}\"desc_$TABLE_NAME\":[$(add_desc "$ARGUMENTS")]$COMMAT${CONTENT:$i+1}"
+                return
+            fi
+        done
+   else
+        error "Error: Cannot create element of Type \"$TMP\""
+        exit 1
+   fi
+}
+
+remove() {
+	if [[ "$VALUE" = "NULL" ]]; then
+		sed -i "$DATABASE" -e "s/^$KEY=.*/$KEY=/g"
+	else
+		sed -i "$DATABASE" -e "/^$KEY=$VALUE/d"
+	fi
+}

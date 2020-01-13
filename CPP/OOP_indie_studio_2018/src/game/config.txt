@@ -1,0 +1,8 @@
+// CONFIG ICI / FAITES COMME VOUS VOULEZ (évitez le sheitan svp) GOGO PARSERA
+Bomberman
+
+Game
+Buttons: Settings/Exit
+
+Menu
+Buttons: Solo/Multi/

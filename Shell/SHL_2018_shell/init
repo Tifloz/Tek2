@@ -1,0 +1,14 @@
+#!/bin/sh
+
+db_is_valid() {
+    if [[ ${ACTION} == "create" ]] && [[ "$(echo ${ARGUMENTS} | cut -d' ' -f1)" == "database" ]]; then
+        touch ${DATABASE}
+    fi
+    if [[ ! -f ${DATABASE} ]]; then
+        print_error "Error: Specified DB file \"$DATABASE\" is invalid"
+        exit 1
+    elif [[ -z ${DATABASE} ]]; then
+        print_help
+        exit 0
+    fi
+}

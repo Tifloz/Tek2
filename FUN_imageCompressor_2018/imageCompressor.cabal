@@ -1,0 +1,50 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.31.2.
+--
+-- see: https://github.com/sol/hpack
+--
+-- hash: c4528174c8b8d0becfd7eaa333d5ac7bd3f96ffa128b1e91d945d320d882b6c0
+
+name:           imageCompressor
+version:        0.1.0.0
+description:    Please see the README on GitHub at <https://github.com/Github username here/imageCompressor#readme>
+homepage:       https://github.com/Tifloz/imageCompressor#readme
+bug-reports:    https://github.com/Tifloz/imageCompressor/issues
+author:         Florian Louvet
+maintainer:     Author email here
+copyright:      2018 Author name here
+license:        BSD3
+build-type:     Simple
+extra-source-files:
+    README.md
+    ChangeLog.md
+
+source-repository head
+  type: git
+  location: https://github.com/Tifloz/imageCompressor
+
+library
+  exposed-modules:
+      Lib
+  other-modules:
+      Paths_imageCompressor
+  hs-source-dirs:
+      src
+  build-depends:
+      base >=4.7 && <5
+  default-language: Haskell2010
+
+executable imageCompressor
+  main-is: Main.hs
+  other-modules:
+      Paths_imageCompressor
+  hs-source-dirs:
+      app
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      base
+    , imageCompressor
+    , parallel
+    , random
+  default-language: Haskell2010
